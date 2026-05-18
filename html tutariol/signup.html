@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up</title>
+</head>
+<body>
+
+<h2>Sign Up</h2>
+
+<input type="email" id="email" placeholder="Enter Email">
+<br><br>
+
+<input type="password" id="password" placeholder="Enter Password">
+<br><br>
+
+<button onclick="signup()">Sign Up</button>
+
+<p id="message"></p>
+
+<script>
+
+function signup() {
+
+let email = document.getElementById("email").value;
+let password = document.getElementById("password").value;
+
+if(localStorage.getItem(email)) {
+
+document.getElementById("message").innerHTML =
+"Email already exists!";
+
+}
+else {
+
+localStorage.setItem(email, password);
+
+document.getElementById("message").innerHTML =
+"Signup Successful!";
+window.location.href = "index.html";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
